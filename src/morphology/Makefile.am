@@ -91,11 +91,9 @@ lexicon-tags.txt: lexicon-sigma.txt
 
 # To produce init uppercase tags, use this (the \u is the crucial part):
 # 		| perl -pe 's/^(.)/+\u$$1/'
-# But by leaving that out, the tags are actually directly compatible with the
-# CG disamb file, which is a huge boon, so we stick with that for now:
-lexicon-tags.relabel: lexicon-tags.txt
+lexicon-tags.relabel: lexicon-tags.txt Makefile
 	$(AM_V_GEN)sed -e 's/<//' -e 's/>//' $< \
-		| perl -pe 's/^(.)/+$$1/' \
+		| perl -pe 's/^(.)/+\u$$1/' \
 		| paste $< - > $@
 
 #lexicon-relabel.regex: lexicon-tags.txt
