@@ -20,7 +20,9 @@
 #! @param GT_TWOLC_MAIN required, the source of phonology
 #! @param GT_TWOLC_SUPPLEMENTS optional, other sources to distribute and
 #! 		  compile for other things
-GT_PHONOLOGY_MAIN=$(GTLANG)-phon.twolc
+
+# Since this SPA is built from Apertium, no phonology file is needed
+GT_PHONOLOGY_MAIN=
 GT_PHONOLOGY_SUPPLEMENTS=
 
 include $(top_srcdir)/am-shared/src-phonology-dir-include.am
