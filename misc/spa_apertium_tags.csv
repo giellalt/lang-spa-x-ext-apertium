@@ -1,3 +1,8 @@
+This file is just for documentation purposes, it documents the
+apertium tags. They are changed automatically into quasi-gt-format
+(<det> to +Det, etc). The neighbouring file contains the actual tag
+pairs.
+
     <sdef n="aa" c="Animate"/> 
     <sdef n="acr" c="Acronym"/> 
     <sdef n="adj" c="Adjective"/> 
