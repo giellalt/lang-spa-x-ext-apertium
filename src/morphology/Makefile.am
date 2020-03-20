@@ -96,6 +96,9 @@ lexicon-tags.relabel: lexicon-tags.txt Makefile
 		| perl -pe 's/^(.)/+\u$$1/' \
 		| paste $< - > $@
 
+spa-apertium-gt.relabel: spa-apertium-gt.csv
+	$(AM_V_GEN)cut -f1-2 < $< > $@
+
 #lexicon-relabel.regex: lexicon-tags.txt
 #	$(AM_V_GEN)sed -e 's/<//' -e 's/>//' $< \
 #		| perl -pe 's/^(.)(.*)/"+\u$$1$$2"\t<-/' \
@@ -108,10 +111,12 @@ lexicon-tags.relabel: lexicon-tags.txt Makefile
 # It seems that Apertium (or Hfst?) is producing a small, random fst + the real fst
 # We need to get rid of that small fst to continue with the real stuff.
 # NB! This might not be a correct observation, and it must be checked with f.ex. Kevin
-lexicon.hfst: lexicon.tmp.hfst lexicon-tags.relabel
+lexicon.hfst: lexicon.tmp.hfst lexicon-tags.relabel spa-apertium-gt.relabel
 	$(AM_V_HSPLIT)$(HFST_SPLIT) -p LEX_PARTS $<
 	$(AM_V_HSUBST)$(HFST_SUBSTITUTE) $(MORE_VERBOSITY) $(HFSTFLAGS) \
-		-i LEX_PARTS2.hfst --from-file=lexicon-tags.relabel -o $@
+		-i LEX_PARTS2.hfst --from-file=lexicon-tags.relabel \
+		| $(HFST_SUBSTITUTE) $(MORE_VERBOSITY) $(HFSTFLAGS) \
+		  --from-file=spa-apertium-gt.relabel -o $@
 	$(AM_V_at)rm -f LEX_PARTS*
 
 #lexicon.hfst lexicon.foma: \
