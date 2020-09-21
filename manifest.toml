@@ -1,0 +1,9 @@
+name = "Spanish (Apertium)"
+version = "0.0.1"
+
+[macos]
+system_pkg_id = "no.divvun.MacDivvun.spa-x-ext-apertium"
+
+[windows]
+system_product_code = "{D2597B5E-663E-4037-BBBC-FA4175CCD8A3}_is1"
+# extra_locales = { es = "spa-x-ext-apertium" }
