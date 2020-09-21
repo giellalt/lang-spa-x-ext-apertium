@@ -135,8 +135,6 @@ lexicon.hfst: lexicon.tmp.hfst lexicon-tags.relabel spa-apertium-gt.relabel
 #	$(AM_V_GEN)gunzip --force $<
 #	$(AM_V_CP)cp -f $< $@
 
-include $(top_srcdir)/am-shared/regex-include.am
-include $(top_srcdir)/am-shared/tag-extraction-include.am
 ### END: Local processing: ###
 
 ####### Other targets: ###########
