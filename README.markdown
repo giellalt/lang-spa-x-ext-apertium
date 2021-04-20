@@ -10,7 +10,8 @@ authors named in the AUTHORS file are available to grant other licencing
 choices.
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-spa)](https://github.com/giellalt/lang-spa/issues)
- [![Build Status](https://github.com/giellalt/lang-spa/workflows/Build%20Speller%20Archives%20and%20Bundles/badge.svg)](https://github.com/giellalt/lang-spa/actions)
+[![Build Status](https://github.com/giellalt/lang-spa/workflows/Build%20Speller%20Archives%20and%20Bundles/badge.svg)](https://github.com/giellalt/lang-spa/actions)
+[![License](https://img.shields.io/github/license/giellalt/template-lang-spa)](https://raw.githubusercontent.com/giellalt/lang-spa/develop/LICENSE)
 
 Install proofing tools and [keyboards](https://github.com/giellalt/keyboard-spa)
 for the Spanish language by using the [Divvun Installer](http://divvun.no)
