@@ -9,7 +9,8 @@ This page documents the work on the **Spanish language model**.
 
 # Project documentation
 
-* Add links to project specific documentation here as needed. Keep the documentation in the `docs/` directory.
+* This is a repository with content merged from Apertium. Please see the project documentation
+  [over there](https://github.com/apertium/apertium-spa) for details.
 
 # In-source documentation
 
