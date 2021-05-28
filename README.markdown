@@ -1,15 +1,15 @@
 The Spanish morphology and tools
 ==========================================
 
-[![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-spa)](https://github.com/giellalt/lang-spa/issues)
-[![Build Status](https://github.com/giellalt/lang-spa/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-spa/actions)
-[![License](https://img.shields.io/github/license/giellalt/lang-spa)](https://raw.githubusercontent.com/giellalt/lang-spa/develop/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-spa-x-ext-apertium)](https://github.com/giellalt/lang-spa-x-ext-apertium/issues)
+[![Build Status](https://github.com/giellalt/lang-spa-x-ext-apertium/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-spa-x-ext-apertium/actions)
+[![License](https://img.shields.io/github/license/giellalt/lang-spa-x-ext-apertium)](https://raw.githubusercontent.com/giellalt/lang-spa-x-ext-apertium/main/LICENSE)
 
 This repository contains finite state source files for the Spanish language,
 for building morphological analysers, proofing tools
 and dictionaries. The data and implementation are licenced under __LICENCE__
 licence, also detailed in the
-[LICENCE](https://github.com/giellalt/lang-spa/blob/develop/LICENCE). The
+[LICENSE](https://github.com/giellalt/lang-spa-x-ext-apertium/blob/main/LICENSE). The
 authors named in the AUTHORS file are available to grant other licencing
 choices.
 
@@ -66,18 +66,18 @@ Downloading
 
 Using Git:
 ```
-git clone https://github.com/giellalt/lang-spa
+git clone https://github.com/giellalt/lang-spa-x-ext-apertium
 ```
 
 Using Subversion:
 ```
-svn checkout https://github.com/giellalt/lang-spa.git/trunk lang-spa
+svn checkout https://github.com/giellalt/lang-spa-x-ext-apertium.git/trunk lang-spa-x-ext-apertium
 ```
 
 Building and installation
 -------------------------
 
-[INSTALL](https://github.com/giellalt/lang-spa/blob/develop/INSTALL)
+[INSTALL](https://github.com/giellalt/lang-spa-x-ext-apertium/blob/main/INSTALL)
 describes the GNU build system in detail, but for most users it is the usual:
 
 ```sh
