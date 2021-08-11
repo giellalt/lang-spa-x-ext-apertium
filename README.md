@@ -3,7 +3,7 @@ The Spanish morphology and tools
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-spa-x-ext-apertium)](https://github.com/giellalt/lang-spa-x-ext-apertium/issues)
 [![Build Status](https://github.com/giellalt/lang-spa-x-ext-apertium/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-spa-x-ext-apertium/actions)
-[![License](https://img.shields.io/github/license/giellalt/lang-spa-x-ext-apertium)](https://raw.githubusercontent.com/giellalt/lang-spa-x-ext-apertium/main/LICENSE)
+[![License](https://img.shields.io/github/license/giellalt/lang-spa-x-ext-apertium)](https://github.com/giellalt/lang-spa-x-ext-apertium/blob/main/LICENSE)
 
 This repository contains finite state source files for the Spanish language,
 for building morphological analysers, proofing tools
