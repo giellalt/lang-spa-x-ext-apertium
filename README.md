@@ -30,7 +30,7 @@ Documentation
 
 Documentation can be found at:
 
--   <https://giellalt.uit.no/lang/spadoc/index.html>
+- [Language specific documentation](https://giellalt.github.io/lang-spa-x-ext-apertium/)
 -   <https://giellalt.uit.no/index.html>
 
 Core dependencies
