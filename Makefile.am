@@ -21,13 +21,17 @@ TARGETS_COMMON =			\
 ## Spanish transducer
 ###############################################################################
 
-$(LANG1).autogen.bin: $(BASENAME).$(LANG1).dix
+.deps/$(BASENAME).$(LANG1).dix: $(BASENAME).$(LANG1).metadix .deps/.d
+	python3 convert-metadix-dix.py $< $@ 
+	apertium-validate-dictionary $@
+
+$(LANG1).autogen.bin: .deps/$(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $<
 	lt-comp rl $< $@
 
-$(LANG1).automorf.bin: $(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx
+$(LANG1).automorf.bin: .deps/$(BASENAME).$(LANG1).dix $(BASENAME).$(LANG1).acx
 	apertium-validate-dictionary $<
-	lt-comp lr $(BASENAME).$(LANG1).dix $@ $(BASENAME).$(LANG1).acx
+	lt-comp lr .deps/$(BASENAME).$(LANG1).dix $@ $(BASENAME).$(LANG1).acx
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.bin
 	lt-print $< | gzip -9 -c -n > $@
@@ -55,7 +59,7 @@ $(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx
 ###############################################################################
 ## Distribution
 ###############################################################################
-EXTRA_DIST=$(BASENAME).$(LANG1).dix		\
+EXTRA_DIST=$(BASENAME).$(LANG1).metadix		\
 	   $(BASENAME).post-$(LANG1).dix	\
 	   $(BASENAME).$(LANG1).acx		\
 	   $(BASENAME).$(LANG1).rlx		\
@@ -73,36 +77,26 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix		\
 apertium_spadir=$(prefix)/share/apertium/$(BASENAME)/
 apertium_spa_srcdir=$(prefix)/share/apertium/$(BASENAME)/
 
-apertium_spa_DATA=$(TARGETS_COMMON) $(LANG1).prob
+apertium_spa_DATA=$(TARGETS_COMMON) \
+	$(LANG1).prob \
+	$(BASENAME).$(LANG1).acx \
+	$(BASENAME).$(LANG1).metadix \
+	$(BASENAME).$(LANG1).rlx
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
 
-# Modes are not installed since they're all just "debug modes". All
-# modes are created by this goal.
-modes/$(LANG1)-morph.mode: modes.xml
-	apertium-validate-modes modes.xml
-	apertium-gen-modes modes.xml
-
 noinst_DATA=modes/$(LANG1)-morph.mode
 
 install-data-local: install-modes
-	test -d $(DESTDIR)$(apertium_spa_srcdir) || mkdir -p $(DESTDIR)$(apertium_spa_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).dix $(DESTDIR)$(apertium_spa_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_spa_srcdir)
 
 CLEANFILES = $(TARGETS_COMMON)
 clean-local:
 	-rm -rf .deps modes
-
 
 ###############################################################################
 ## Test
 ###############################################################################
 
 test: all
-	echo "frase de prueba" | apertium -d . spa-tagger | tee .test-mt
-	@echo '^frase<n><f><sg>$$ ^de<pr>$$ ^prueba<n><f><sg>$$^.<sent>$$' > .test-ref
-	@diff .test-ref .test-mt
-	@rm .test-ref .test-mt
-	bash -x dev/test-grep.sh
+	apertium-regtest test
