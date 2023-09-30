@@ -2,7 +2,7 @@ The Spanish morphology and tools
 ==========================================
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-spa-x-ext-apertium)](https://github.com/giellalt/lang-spa-x-ext-apertium/issues)
-[![Build Status](https://divvun-tc.thetc.se/api/github/v1/repository/giellalt/lang-spa-x-ext-apertium/main/badge.svg)](https://github.com/giellalt/lang-spa-x-ext-apertium/actions)
+[![Build Status](https://divvun-tc.giellalt.org/api/github/v1/repository/giellalt/lang-spa-x-ext-apertium/main/badge.svg)](https://github.com/giellalt/lang-spa-x-ext-apertium/actions)
 [![License](https://img.shields.io/github/license/giellalt/lang-spa-x-ext-apertium)](https://github.com/giellalt/lang-spa-x-ext-apertium/blob/main/LICENSE)
 [![Desktop speller download](https://img.shields.io/badge/download%40latest-desktop--bhfst-brightgreen)](https://pahkat.uit.no/main/download/speller-spa?platform=desktop&channel=nightly)
 [![Mobile speller download](https://img.shields.io/badge/download%40latest-mobile--bhfst-brightgreen)](https://pahkat.uit.no/main/download/speller-spa?platform=mbile&channel=nightly)
