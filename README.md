@@ -1,6 +1,7 @@
 The Spanish morphology and tools
 ==========================================
 
+[![Maturity](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-spa-x-ext-apertium%2Fgh-pages%2Fmaturity.json)](https://giellalt.github.io/MaturityClassification.html)
 ![Lemma count](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-spa-x-ext-apertium%2Fgh-pages%2Flemmacount.json)
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-spa-x-ext-apertium)](https://github.com/giellalt/lang-spa-x-ext-apertium/issues)
 [![Build Status](https://divvun-tc.giellalt.org/api/github/v1/repository/giellalt/lang-spa-x-ext-apertium/main/badge.svg)](https://github.com/giellalt/lang-spa-x-ext-apertium/actions)
