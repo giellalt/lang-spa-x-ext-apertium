@@ -2,7 +2,7 @@
 <hfstspeller dtdversion="1.0" hfstversion="3">
   <info>
     <locale>es</locale>
-    <title>Giellatekno/Divvun/UiT fst-based speller for Spanish</title>
+    <title>Spanish</title>
     <description>This is an fst-based speller for Spanish. It is based
     on the normative subset of the morphological analyser for Spanish.
     The source code can be found at:
