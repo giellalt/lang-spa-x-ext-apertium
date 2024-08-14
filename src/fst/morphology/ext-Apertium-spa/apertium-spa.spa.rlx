@@ -230,12 +230,21 @@ REMOVE:en_ocasiones Adv IF (0 ("en ocasiones")) (1C ("de")) (2 ("fiesta") OR ("c
 REMOVE:en_ocasiones Adv IF (0 ("en ocasiones")) (1C ("de")) (2 A) (3 ("fiesta") OR ("celebración") OR ("ceremonia") OR ("jubileo") OR ("gala") OR ("evento") OR ("solemnidad"));
 SELECT:en_ocasiones Adv IF (0 ("en ocasiones")) ;
 
+# por la presente
+SELECT:por_la_presente Adv IF (0 ("por la presente")) (1 CM);
+
 #Palabras sueltas: Nombre, Rojo, etc.
 SELECT:sustantivo N IF (0 N) (-1 >>>) (1 <<<) (NOT 0 (loc) OR (ij));
 SELECT:adjetivo   A IF (0 A) (-1 >>>) (1 <<<) (NOT 0 (loc) OR (ij));
 
 #fallo
 SELECT:fallo_n N (0 ("fallo")) (-1 ("sentencia") OR ("parte dispositiva") OR ("dispositva"));
+
+#charla conferencia
+SELECT:charla_n N (0 ("charla")) (1 ("conferencia"));
+SELECT:charla_n N (0 ("charla")) (1 ("-")) (2 ("conferencia"));
+SELECT:charla_n N (-1 ("charla")) (0 ("conferencia"));
+SELECT:charla_n N (-2 ("charla")) (-1 ("-")) (0 ("conferencia"));
 
 # para traducir spa>cat: lo que es > cosa que és
 SELECT:lo_que_es ("lo_que2") IF (0 ("lo_que2")) (-1 CnjCoo OR CM OR >>> OR (META:/[-–—−]/r)) (1 Ser + (p3) + (sg)) (2 ("más")) (3 Adj_PP) (4 CM OR <<<);
@@ -385,7 +394,6 @@ REMOVE:viva (ij) IF (0 ("viva"));
 #cejar en / ceja (noun)
 REMOVE:cejar_en Verb IF (0 ("cejar# en")) (NOT -1 ("no"));
 
-
 # prn + verbo/nombre
 #SELECT:prn_vb_n Vblex IF (0C Vblex OR N) (-1C PrnTnPrs) ;
 SELECT:prn_vb_n Verb IF (0C Verb + (p1 sg) OR N) (-1C ("yo"i));
@@ -533,6 +541,7 @@ SELECT:preciso Vblex IF (1 ("preciso")) (0 ("resultar"));
 SELECT:precisar Vblex IF (0 ("precisar")) (1 Inf);
 SELECT:ir_a Ir IF (0 Ir) (1 ("a")) (2/* Inf);
 REMOVE:ir_ger Ser IF (0 Ser) (0 Ir) (1/* Ger); #fueron subiendo = ir, no ser
+REMOVE:ir_al_encuentro Ser IF (0 Ser) (0 Ir) (1 ("a")) (2 Det) (3 ("encuentro")); #fueron a su encuentro = ir, no ser
 SELECT:lo_que_fuera_para Ser IF (0 Ser) (0 Ir) (-1 Rel) (1 ("para") OR ("por")); # lo que fuera = ser, no ir
 REMOVE:lo_que_fuera Ir IF (0 Ser) (0 Ir) (-1 Rel) (NOT 1/* ("a")); # lo que fuera = ser, no ir
 SELECT:me_fui Ir IF (0 Ser) (0 Ir + (p1)) (-1 Pro + (p1));
@@ -863,6 +872,9 @@ SELECT:que_afecta Vblex (0 ("afectar") OR ("presentar")) (-1 CnjAdv OR CnjSub OR
 SELECT:decir_dar ("decir") IF (0 ("decir")) (1 ("adiós") OR ("hola"));
 REMOVE:vacuna A IF (0 ("vacuna")) (NOT -1 N);
 
+SELECT:gafa_n N IF (0 ("gafa")) (1 ("de") OR ("natación") OR ("buceo") OR ("nadar") OR ("bucear") OR ("nado"));
+SELECT:gafa_n N IF (-1 ("gafa")) (0 ("buceo"));
+
 SELECT:golfo_n N IF (0 ("golfo") OR ("empleado")) (1 ("de"));
 
 SELECT:vaya_adj A IF (0 ("vaya")) (1 N) (NOT -1 Pron) (NOT 1 Adv OR Prep); # ¡Vaya hombre!
@@ -1091,6 +1103,7 @@ SELECT:adelante_adv Adv IF (0 ("adelante"i)) (-1 Vblex OR ("paso")); #seguir/pas
 SELECT:vela_n N IF (0 ("vela"i)); #vela (nombre), raro: ve + la (pron.)
 
 SELECT:cual_rel (rel an mf sg) IF (0 ("cual"i)) (-1 (det def m sg)) ; #del cual (relativo)
+SELECT:cual_itg (prn itg mf sg) IF (0 ("cuál"i)) (1 ("de"i) + Prep) ; #cuál (pronombre interrogativo, error ortográfico frecuente)
 
 SELECT:vengar_1 ("vengar") IF (-1 ("<se>"i)) (0 ("<venga>") OR ("<vengan>")) ; #no infalible, pero más frecuente
 
@@ -1103,6 +1116,7 @@ SELECT:dar_verb Vblex IF (0 ("dar"i)) (1 ("de")) (2 ("<alta>") OR ("<baja>")); #
 
 REMOVE:dado_n N IF (0 ("<dado>"i)) (NOT -1 Det) (1 Det + MascSg);
 REMOVE:dados_n N IF (0 ("<dados>"i)) (NOT -1 Det) (1 Det + MascPl);
+REMOVE:venir_dado N if (0 ("dado")) (-1 ("venir"));
 
 SELECT:gestiones N IF (0 ("<Gestiones>") OR ("<Relaciones>") OR ("<Expediente>") OR ("<Expedientes>") OR ("<Presupuesto>")); # en mayúsculas son sustantivos
 SELECT:versiones N IF (0 ("<versiones>"i));
