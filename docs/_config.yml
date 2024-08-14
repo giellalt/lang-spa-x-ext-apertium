@@ -1,5 +1,0 @@
-theme: jekyll-theme-minimal
-title: Spanish NLP Grammar
-description: Finite state and Constraint Grammar based analysers, proofing tools and other resources
-plugins:
-  - jemoji
