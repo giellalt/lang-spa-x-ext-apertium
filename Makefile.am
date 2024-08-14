@@ -21,7 +21,7 @@ banner:
 test: check
 
 update:
-	git subtree pull --prefix src/fst/ext-Apertium-spa https://github.com/apertium/apertium-spa.git master --squash
+	git subtree pull --prefix src/fst/morphology/ext-Apertium-spa https://github.com/apertium/apertium-spa.git master --squash
 
 # recurse all make devs just
 dev:
