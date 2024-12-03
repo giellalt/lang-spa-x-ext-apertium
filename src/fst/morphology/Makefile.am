@@ -99,6 +99,7 @@ GIELLA_LOCAL_TARGETS=
 HFST_REGEXP2FST_FLAGS=--xerox-composition=true
 
 TAG_EXTRACTION_FST=$(builddir)/lexicon.tmp
+TAG_EXTRACTION_TTS_FST=$(builddir)/lexicon.tmp
 TAG_FILE=tags.txt
 LEX_TAG_FILE=lexicon-$(TAG_FILE)
 
