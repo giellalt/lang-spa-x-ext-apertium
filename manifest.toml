@@ -1,11 +1,8 @@
-spellername = "Spanish"
-spellerversion = "0.1.1"
-
 # Name of the speller package in various languages.
 # The default is English + autonym:
 [speller.name]
-en = "Spanish spellchecker (Apertium)"
-es = "Autonym spellchecker (Apertium)"
+en = "Spanish spellchecker (Apertium"
+es = "Autonym spellchecker (Apertium"
 
 # Description of the speller package in various languages.
 # The default is English + autonym:
@@ -19,3 +16,14 @@ system_pkg_id = "no.divvun.MacDivvun.spa-x-ext-apertium"
 [windows]
 system_product_code = "{D2597B5E-663E-4037-BBBC-FA4175CCD8A3}_is1"
 # extra_locales = { es = "spa-x-ext-apertium" }
+[package.speller]
+name = "Spanish"
+version = "0.1.1"
+
+[package.grammar]
+name = "Spanish"
+version = "0.1.0"
+
+[package.tts-text-proc]
+name = "Spanish"
+version = "0.1.0"
