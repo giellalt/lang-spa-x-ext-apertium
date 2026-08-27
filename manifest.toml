@@ -1,8 +1,8 @@
 # Name of the speller package in various languages.
 # The default is English + autonym:
 [speller.name]
-en = "Spanish spellchecker (Apertium"
-es = "Autonym spellchecker (Apertium"
+en = "Spanish spellchecker (Apertium)"
+es = "Autonym spellchecker (Apertium)"
 
 # Description of the speller package in various languages.
 # The default is English + autonym:
